@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<title>Netflix Stats</title>
+		<!-- Standard Meta -->
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="./dist/semantic.css">
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.js"></script>
+		<script src="./dist/semantic.js"></script>
+		<script src="./netflixstats.js"></script>
+	</head>
+	<body>
+		<div class="ui six column centered grid">
+			<div class="one column centered row" style="padding-left: 20px; padding-right: 20px; max-width: 1000px; ">
+		      	<div class="centered column" style="text-align: center;">
+		      		<center>
+			      		<h1 style="margin: 0px; padding: 0px; padding-top: 5px;"><span style="color: #BD0D13;">Netflix Stats</span></h1>
+			      		<h4 style="margin: 0px; padding: 0px;">How much time have you wasted on Netflix?</h4>
+		      		</center>
+		      	</div>
+		    </div>
+				<div class="one column centered row" id="login" style="padding-left: 20px; padding-right: 20px; max-width: 500px;">
+					<div class="ui segment column" style="text-align: center">
+						<div class="ui fluid labeled input">
+							<div class="ui label">
+								<i class="mail  icon"></i>
+								Email
+							</div>
+							<input type="text" id="email">
+						</div>
+						<div class="ui fluid labeled input" style="padding-top: 10px; padding-bottom: 10px;">
+							<div class="ui label">
+								<i class="lock outline icon"></i>
+								Password
+							</div>
+							<input type="password" id="pass">
+						</div>
+						<div class="ui negative message" style="display: none" id="err">
+							<div class="header">
+								Uh oh...
+							</div>
+							<p>We can't seem to find a Netflix account with that username &amp; password combination. Try again.</p>
+						</div>
+						<div class="ui youtube button" onclick="getShowList();$('#loader').show(); console.log($('#login').height()); $('#loader').height($('#login').height()); $('#login').hide();  " style="padding-top: 10px; display: inline-block">
+					    Login to Netflix
+					  </div>
+					</div>
+				</div>
+				<div class="one column centered row" id="loader" style="display: none; padding-left: 20px; padding-right: 20px; max-width: 500px;">
+					<div class="ui segment column" style="min-height: 186px;">
+						<div class="ui active inverted dimmer" style="padding: 50px;">
+    					<div class="ui text loader">Accessing Netflix</div>
+  					</div>
+					</div>
+				</div>
+				<div class="one column centered row" id="stats" style="padding-left: 20px; padding-right: 20px; max-width: 1000px; display: none;">
+					<div class="ui segment column" style="min-height: 186px;">
+						<table class="ui selectable celled table">
+						  <thead>
+						    <tr>
+						      <th>Show or Movie Title</th>
+									<th>Times watched since <span id="date"></span></th>
+									<th>Hours watched since <span id="date2"></span></th>
+						    </tr>
+						  </thead>
+						  <tbody id="listBody">
+						  </tbody>
+						</table>
+					</div>
+				</div>
+		  </div>
+		</div>
+	</body>
+</html>
