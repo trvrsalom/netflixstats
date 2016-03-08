@@ -1,7 +1,7 @@
 function getShowList() {
 	console.log("hey");
 	$.ajax({
-	  url: "http://104.131.142.12/?email="+$("#email").val()+"&password="+$("#pass").val(),
+	  url: "http://159.203.228.159/?email="+$("#email").val()+"&password="+$("#pass").val(),
 	  success: function(resp) {
 			gotShowList(resp);
 		},
